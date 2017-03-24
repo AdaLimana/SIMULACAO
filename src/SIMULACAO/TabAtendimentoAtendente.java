@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * @author imortal77
  */
-public class TabAtendimentoProfessor {
+public class TabAtendimentoAtendente {
     
     private ArrayList<Evento> eventos;
     private char estado;
@@ -15,8 +15,8 @@ public class TabAtendimentoProfessor {
     private int qntNoSistema;
     
     /*Construtor padra da classe
-    TabAtendimentoProfessor*/
-    TabAtendimentoProfessor(ArrayList<Cliente> clientes){
+    TabAtendimentoAtendente*/
+    TabAtendimentoAtendente(ArrayList<Cliente> clientes){
         
         eventos = new ArrayList<>();
         estado = 'L';
