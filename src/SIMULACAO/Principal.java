@@ -8,20 +8,15 @@ public class Principal {
     public static void main(String[] args) {
         
         
-        TabAtendimentoCliente tab;
-        tab = new TabAtendimentoCliente();
+        TabAtendimentoCliente tab = new TabAtendimentoCliente();/*cria um objeto do tipo TabAtendimentoCliente*/
         
-        ArrayList< Cliente > clientes;
-        Cliente c;
+        ArrayList< Cliente > clientes = tab.getClientes();  /*recebe a referencia do objeto do tipo ArrayList<Cliente>*/
+                                                            /*que eh um atributo do objeto referenciado por tab */
         
-        TabAtendimentoProfessor tabP;
-        ArrayList< Evento > eventos;
-        Evento e;
-        
-        clientes = tab.getClientes();
-        
-        tabP = new TabAtendimentoProfessor(clientes);
-        
+        TabAtendimentoAtendente tabP = new TabAtendimentoAtendente(clientes);   /*cria um objeto do tipo TabAtendimentoAtendente*/
+                                                                                /*passando a referencia do objeto do tipo*/
+                                                                                /*ArrayList<Cliente>, que eh um atributo do objeto*/
+                                                                                /*referenciado por tab, como parametro*/
         tab.mostraTabela();
       
         tabP.mostraTabela();
