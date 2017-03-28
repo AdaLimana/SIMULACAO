@@ -15,9 +15,12 @@ public class TabAtendimentoCliente {
     TabAtendimentoCliente*/
     TabAtendimentoCliente(){
     
+        totalTEspera = 0;
+        totalTAtendimento = 0;
         inicializaClientes();
         setaTempoChegadaSistema();
         atendimento();
+        geraEstatistica();
     }
     
     /*Metodo para permitir acesso
@@ -104,6 +107,24 @@ public class TabAtendimentoCliente {
         }
     }
     
+    
+    private void geraEstatistica(){
+    
+        totalTEspera = 0;
+        totalTAtendimento = 0;
+        int i = 0;
+        Cliente c;
+        while(i < clientes.size()){
+        
+            c = clientes.get(i);
+            totalTEspera = totalTEspera + c.getTEspera();
+            totalTAtendimento = totalTAtendimento + c.getTAtendimento();
+            i++;
+        
+        }
+    
+    }
+    
     /*Metodo responsavel por imprimir
     a tabela*/
     public void mostraTabela(){
@@ -129,6 +150,11 @@ public class TabAtendimentoCliente {
             System.out.printf("\n# ID = %3d # TCR = %3d # TCH = %3d # TINA = %3d # TA = %3d # TS = %3d # TES = %3d #", c.getId(), c.getTCriacao(),c.getTChegadaSis(),c.getTInAtendimento(), c.getTAtendimento(), c.getTSaida(), c.getTEspera());
         }
         System.out.printf("\n###################################################################################\n");
+    
+        System.out.printf("Tempo total de espera em fila = %d\n"
+                        + "Tempo medio de espera em fila = %f\n"
+                        + "Tempo total de atendimento    = %d\n"
+                        + "Tempo medio de atendimento    = %f\n\n", totalTEspera, (float)totalTEspera / clientes.size(), totalTAtendimento, (float)totalTAtendimento / clientes.size() );
     }
     
     
