@@ -1,4 +1,4 @@
-# Simulacao /Simulation
+# Simulacao/Simulation
 
 Este código foi desenvolvido como um trabalho referente à disciplina de Simulação do
 7º semestre do curso de Ciencia da Computacao, da URI - Campus Santo Ângelo.
